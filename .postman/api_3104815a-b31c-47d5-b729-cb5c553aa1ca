@@ -15,7 +15,6 @@ files[] = {"id":"43213358-e763d43f-89a9-4497-ae04-70f62b6531de","path":"HTTP Api
 
 [config.relations.apiDefinition]
 files[] = {"path":"index.json","metaData":{}}
-files[] = {"path":"TEST_push.json","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
 type = openapi:3
