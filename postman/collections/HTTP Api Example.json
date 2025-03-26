@@ -1,0 +1,2982 @@
+{
+	"info": {
+		"_postman_id": "e763d43f-89a9-4497-ae04-70f62b6531de",
+		"name": "HTTP Api Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "43213358-e763d43f-89a9-4497-ae04-70f62b6531de"
+	},
+	"item": [
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Comment Service get",
+							"id": "55af5ee4-6ce1-497b-911e-ab1d01e680ba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id?select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"query": [
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b17b1dc4-75dc-4a01-af1f-ecd6d1bfd2bf",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id?select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"query": [
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "571c0bd8-8d86-40bb-9364-ac1e50a21bcb"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Comment Service update",
+							"id": "7eba4a0d-888e-4176-b251-5981a290da12",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "cf64895a-6955-46fa-9ac4-0571bbcf69b4",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "d097c187-3bc0-4842-abba-2dccc3b918ff"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Comment Service delete",
+							"id": "0823fad2-4cef-4e9c-aee9-9121bbc42eba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/comments/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "64be8dc3-7317-4106-a432-b4180ddeb94d",
+									"name": "There is no content to send for this request, but the headers may be useful. ",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/comments/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"comments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "0e123fc8-19d7-40d4-8219-091dfd8813c5"
+				},
+				{
+					"name": "Comment Service list",
+					"id": "304db288-ee92-4533-95cf-fb024c5f2c59",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/comments?skip=0&limit=30&select=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "30"
+								},
+								{
+									"key": "select",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b0d6d90b-ddf1-4015-84bc-fd41db54aa8b",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/comments?skip=0&limit=30&select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "c0ce946f-d766-4f18-86ef-258c6f0691a0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"comments\": [\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"limit\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Comment Service create",
+					"id": "ed4596ae-7747-40fa-9fec-3f04f1e8f074",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "684a4ed0-4fe0-4a3d-84b7-e0aa871c251b",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/comments",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "93d9015e-dc54-45f2-b4d9-7bb3e8fecdab"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"postId\": \"<integer>\",\n  \"body\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "db69a5f8-e2e1-411e-946c-ab6562a4a929"
+		},
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Course Service get",
+							"id": "f878b4ec-c752-4c83-8dea-924a0f7ad5a7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "X-API-KEY",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/courses/:id?select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"courses",
+										":id"
+									],
+									"query": [
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3e7387db-bebf-4f58-9bb0-4fd86c60b140",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-KEY",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/courses/:id?select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"courses",
+												":id"
+											],
+											"query": [
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "a5b3dbfa-f429-410a-90cc-1e67ec2ffe8f"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Course Service update",
+							"id": "208a6301-32f7-4245-8732-1edf375d06d7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "X-API-KEY",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/courses/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"courses",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "1ff83c85-8018-44f4-bede-9f5aceb0dbc0",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-KEY",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/courses/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"courses",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "18053011-a994-4ac2-9b6d-6fda247017cd"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Course Service delete",
+							"id": "fb80e64a-7e76-4cfe-8fe0-50d86a2040ca",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "X-API-KEY",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/courses/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"courses",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b79667e6-5aa6-4a68-8b74-e753c944c6ba",
+									"name": "There is no content to send for this request, but the headers may be useful. ",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-KEY",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/courses/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"courses",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "71ad729a-c32f-4fe5-a516-c7451298ca0e"
+				},
+				{
+					"name": "Course Service list",
+					"id": "1149c238-e605-4086-9ce1-5a754f2a2178",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "X-API-KEY",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses?skip=<string>&limit=<string>&select=<string>,<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "<string>"
+								},
+								{
+									"key": "limit",
+									"value": "<string>"
+								},
+								{
+									"key": "select",
+									"value": "<string>,<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2f40e453-1bd3-44b1-afc0-c8148bcc3b98",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-KEY",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/courses?skip=<string>&limit=<string>&select=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"courses"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "<string>"
+										},
+										{
+											"key": "limit",
+											"value": "<string>"
+										},
+										{
+											"key": "select",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "69049534-7e28-4e77-8267-d6b21d193011"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"courses\": [\n    {\n      \"id\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": 0,\n  \"limit\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Course Service create",
+					"id": "e85901b4-45fd-4b3a-a750-872b207e787a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "X-API-KEY",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "62514794-c80b-4bf9-af59-9df787ea3b6c",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-KEY",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/courses",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "3775ae0e-2688-4811-8033-3d0955374652"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "04b9a72d-b21f-47ab-9c6e-d7f830f84281"
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Auth Service create",
+					"id": "b5c83574-4ec4-412e-bd23-d022b171cdd1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "059b2180-3e97-44b5-9049-8e4580f5d4f6",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "e0497cec-dc2c-47c7-8660-6f8ca064b797"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"token\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "48dc920a-645d-4593-8595-59e4e996bd0e"
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Post Service get",
+							"id": "af23741f-2b06-4f30-9890-63e4f23b868a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/posts/:id?select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts",
+										":id"
+									],
+									"query": [
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3f5ea55b-d9ea-45fa-9c85-e896f6723b23",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/posts/:id?select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"posts",
+												":id"
+											],
+											"query": [
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "ac3b0b5f-e810-4fe4-8f7a-36b3e35d62ca"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Post Service update",
+							"id": "b86620ce-44ad-474d-93a6-e54650d8f1db",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/posts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b47aaac1-b191-4fc9-8ac5-2deecd896bcd",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/posts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"posts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "e0a7056f-41bc-41d8-b091-b9ea8a06e184"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Post Service delete",
+							"id": "31918af6-7fd2-45c6-9bfc-4367f3a226b9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/posts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "941b78d7-0e21-4d58-870a-ad7e8c873cc5",
+									"name": "There is no content to send for this request, but the headers may be useful. ",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/posts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"posts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "b1ec65ec-9b2e-4094-a802-d3807287e455"
+				},
+				{
+					"name": "{postId}",
+					"item": [
+						{
+							"name": "comments",
+							"item": [
+								{
+									"name": "Post Service get Comments",
+									"id": "7438ca27-d6c6-4c12-9350-b793498af2af",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/posts/:postId/comments?skip=0&limit=30&select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"posts",
+												":postId",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "30"
+												},
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "postId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "e51245bb-63d3-4c93-9932-8917dae85689",
+											"name": "The request has succeeded.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/posts/:postId/comments?skip=0&limit=30&select=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"posts",
+														":postId",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "skip",
+															"value": "0"
+														},
+														{
+															"key": "limit",
+															"value": "30"
+														},
+														{
+															"key": "select",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "postId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"uuid": "7bb4361c-2f47-4afd-a891-27d84b833e9e"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"comments\": [\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"limit\": 30\n}"
+										}
+									]
+								}
+							],
+							"id": "bc3f30c8-4eea-4a9c-aec8-31383f336bbb"
+						}
+					],
+					"id": "748f61e3-7290-4ca8-b58d-aee89605b8c6"
+				},
+				{
+					"name": "Post Service list",
+					"id": "5167b588-fcc6-48bd-9b69-0c4ffe53bf16",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/posts?skip=0&limit=30&select=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "30"
+								},
+								{
+									"key": "select",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "95be90d8-623f-4e0f-96af-ef0b18de59bf",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/posts?skip=0&limit=30&select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "30"
+										},
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "d6b8fc1f-555e-4e4a-b648-c39a938b390f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"posts\": [\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"body\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"body\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"limit\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Service create",
+					"id": "e67ae014-726b-4a3b-a41f-787a2db86bde",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5eaa2072-6e15-4b3b-aa78-089977eb253f",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/posts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "177c8198-df6f-45e1-bd98-118a9c854a0c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"authorId\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"body\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "8cf59f5a-ddc2-4ce5-8960-f14b815649ba"
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Task Service get",
+							"id": "95f4026c-b3d0-4ab8-b16e-2d54af934741",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{basicAuthUsername}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{basicAuthPassword}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:id?select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"query": [
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4ddc0b28-f491-4ce7-a2d7-b4ea64052766",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:id?select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":id"
+											],
+											"query": [
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "cde8d53b-c588-4e4b-8888-24ad7b603f44"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"In Progress\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Task Service update",
+							"id": "3599a6a3-5186-41f6-a540-b7cbe00106c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{basicAuthUsername}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{basicAuthPassword}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"In Progress\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "15a1a8a5-0f58-45c6-9b82-db538558aeb8",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"In Progress\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "7612fe13-2ae2-4d13-b393-ebba088602bf"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"In Progress\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Task Service delete",
+							"id": "b43ca21c-b543-44cf-b01d-2158ce2057dd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "{{basicAuthUsername}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{basicAuthPassword}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "59141d78-cf80-4466-a64a-730be2973817",
+									"name": "There is no content to send for this request, but the headers may be useful. ",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tasks/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tasks",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "25f9b035-b2f2-4244-ae4f-10b5b9353e79"
+				},
+				{
+					"name": "Task Service list",
+					"id": "be9d0d3f-768d-48fd-a4f3-b97e83c90ab7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tasks?skip=<string>&limit=<string>&select=<string>,<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "<string>"
+								},
+								{
+									"key": "limit",
+									"value": "<string>"
+								},
+								{
+									"key": "select",
+									"value": "<string>,<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "bbaa52d0-50f3-4792-9c5a-63342673ae90",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tasks?skip=<string>&limit=<string>&select=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "<string>"
+										},
+										{
+											"key": "limit",
+											"value": "<string>"
+										},
+										{
+											"key": "select",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "545e0abe-09e8-4400-92f9-bac0ae53068b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"tasks\": [\n    {\n      \"id\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"status\": \"Ready\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"status\": \"Backlog\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": 0,\n  \"limit\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Task Service create",
+					"id": "65573fac-5ed1-4b90-8e8e-062685a60e2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basicAuthUsername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basicAuthPassword}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"Backlog\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6975da7d-ab06-434f-b5de-f6b9681f0189",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"Backlog\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "31175143-3311-49da-a2a5-204b443464a7"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"status\": \"In Progress\"\n}"
+						}
+					]
+				}
+			],
+			"id": "dd8ea42d-819c-4218-a4cc-923cb62f9bd2"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "{authorId}",
+					"item": [
+						{
+							"name": "comments",
+							"item": [
+								{
+									"name": "User Service get Comments",
+									"id": "79dbb52d-268c-4a26-b141-0cb512ac5c07",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:authorId/comments?skip=0&limit=30&select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":authorId",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "30"
+												},
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "authorId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "6dc5b9fe-75ac-415a-a0f6-246d118405b9",
+											"name": "The request has succeeded.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/:authorId/comments?skip=0&limit=30&select=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":authorId",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "skip",
+															"value": "0"
+														},
+														{
+															"key": "limit",
+															"value": "30"
+														},
+														{
+															"key": "select",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "authorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"uuid": "8c3b8b98-54ec-4d13-b065-b01d509c1907"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"comments\": [\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"postId\": \"<integer>\",\n      \"body\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"limit\": 30\n}"
+										}
+									]
+								}
+							],
+							"id": "f815d941-2bf9-45b3-820f-e55d5ba27395"
+						},
+						{
+							"name": "posts",
+							"item": [
+								{
+									"name": "User Service get Posts",
+									"id": "3427f06e-7423-4ae8-bf80-930038b7c2c6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:authorId/posts?skip=0&limit=30&select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":authorId",
+												"posts"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "30"
+												},
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "authorId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "e0b5c767-c804-41a1-bdb8-816422e27325",
+											"name": "The request has succeeded.",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/:authorId/posts?skip=0&limit=30&select=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														":authorId",
+														"posts"
+													],
+													"query": [
+														{
+															"key": "skip",
+															"value": "0"
+														},
+														{
+															"key": "limit",
+															"value": "30"
+														},
+														{
+															"key": "select",
+															"value": "<string>"
+														}
+													],
+													"variable": [
+														{
+															"key": "authorId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"uuid": "a08b055b-ceef-4420-982b-4ae363a7023a"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"posts\": [\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"body\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"authorId\": \"<integer>\",\n      \"title\": \"<string>\",\n      \"body\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": \"<integer>\",\n  \"limit\": 30\n}"
+										}
+									]
+								}
+							],
+							"id": "059f860d-03cb-4b5c-987c-64483baec447"
+						}
+					],
+					"id": "8460eae3-91cb-43e8-a07f-b6cb4c5cd9b2"
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "User Service get",
+							"id": "353aac83-7053-4f54-8a34-bb4c4dc2fb2b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id?select=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"query": [
+										{
+											"key": "select",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "30dd9bb8-6aef-4c79-9982-813ea350ba47",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id?select=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"query": [
+												{
+													"key": "select",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "96c8ca3c-c124-4aac-9c70-ba9016cf25f3"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "User Service update",
+							"id": "80b8124a-c862-4d99-8f6d-eb844f154770",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f7a9a5cc-170b-4c08-b7f4-3c473b2ad637",
+									"name": "The request has succeeded.",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "0ac4df67-b370-4967-9f43-527e9f587909"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "User Service delete",
+							"id": "5f6a8d46-76e7-4ec5-a6d1-d2ad04dbd47d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "30c0cf14-10f4-4853-8743-25017f2db7f6",
+									"name": "There is no content to send for this request, but the headers may be useful. ",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "94b616dd-ec81-4f62-aaec-1bec69f7cc95"
+				},
+				{
+					"name": "User Service list",
+					"id": "d83bc1e3-45fd-4925-861a-0098d51655b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users?skip=<string>&limit=<string>&select=<string>,<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "<string>"
+								},
+								{
+									"key": "limit",
+									"value": "<string>"
+								},
+								{
+									"key": "select",
+									"value": "<string>,<string>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "03859d30-b759-4689-a829-ff7c8b386fb7",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users?skip=<string>&limit=<string>&select=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "<string>"
+										},
+										{
+											"key": "limit",
+											"value": "<string>"
+										},
+										{
+											"key": "select",
+											"value": "<string>,<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "8a020f5d-7412-4b60-a236-2585be8dba6a"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"users\": [\n    {\n      \"id\": \"<integer>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"email\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"skip\": 0,\n  \"limit\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "User Service create",
+					"id": "dfcf0f82-5a80-4883-b48b-5869fc9e246a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c4555d40-0601-452b-a3ce-cc6776ac1c3c",
+							"name": "The request has succeeded.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "8943f07e-9cc4-494f-9c2c-3c2364c0c4d5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "22316244-e3a5-49d8-bc4f-4079d8990d2d"
+		}
+	],
+	"variable": [
+		{
+			"id": "8111b92c-3e6d-494f-a520-228cc40e6410",
+			"key": "baseUrl",
+			"value": "/postman"
+		}
+	]
+}
